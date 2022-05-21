@@ -5,7 +5,7 @@ const Footer = () => {
     const today = new Date();
     const year = today.getFullYear();
     return (
-        <footer className='bg-neutral'>
+        <footer className='bg-black'>
       <div className="footer p-10  text-neutral-content">
       <div>
           <span className="footer-title">Services</span> 
@@ -28,7 +28,7 @@ const Footer = () => {
           <Link to={'/'} className="link link-hover">Cookie policy</Link>
         </div>
       </div>
-        <p className='text-center text-white'> <span className='text-primary' dangerouslySetInnerHTML={{ "__html": "&copy;" }} /> {year} <span className=' font-bold text-secondary'>DeWalt</span></p>
+        <p className='text-center text-white'> <span dangerouslySetInnerHTML={{ "__html": "&copy;" }} /> {year} <span className=' font-bold text-secondary'>DeWalt</span></p>
       </footer>
     );
 };

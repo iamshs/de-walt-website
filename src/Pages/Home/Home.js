@@ -1,14 +1,20 @@
 import React from 'react';
 import Banner from './Banner';
+import Contact from './Contact';
+import Reviews from './Reviews';
 import Specialty from './Specialty';
-import Services from './Tools';
+import Tools from './Tools';
+
 
 const Home = () => {
     return (
         <div>
            <Banner />
-           <Services />
            <Specialty />
+           <Tools />
+           <Reviews />
+           <Contact />
+           
         </div>
     );
 };
