@@ -14,7 +14,7 @@ const Tool = ({tool}) => {
     <p className='text-lg'>Available Quantity: {availableQuantity}</p>
     <p className=' text-lg font-bold'>Minimum Order Quantity: {minQuantity}</p>
     <div className="card-actions justify-end">
-      <button className="btn bg-gradient-to-r from-cyan-500 to-primary">Buy Now</button>
+      <button className="btn bg-gradient-to-r text-white font-bold border-none from-cyan-500 to-primary">Buy Now</button>
     </div>
   </div>
 </div>
