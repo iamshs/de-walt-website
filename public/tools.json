@@ -1,0 +1,26 @@
+[
+    {
+        "name": "BOSCH GDS 30",
+        "price": 33,
+        "img": "https://rukminim2.flixcart.com/image/416/416/j5crukw0/power-hand-tool-kit/z/f/h/gds-30-bosch-original-imaewf9ru2xtc8wp.jpeg?q=70",
+        "availableQuantity": 1500,
+        "minQuantity": 10,
+        "description": "The powerful tool for large screwdriving applications, For heavy screw joints on trucks, construction machinery, in commercial vehicle construction, in the petrochemical and other heavy industries"
+    },
+    {
+        "name": "Drill",
+        "price": 40,
+        "img": "https://image.made-in-china.com/318f0j00ATPYGzUIuHoh/%E7%94%B5%E5%8A%A8%E5%B7%A5%E5%85%B7+%E9%BB%84+%E5%BC%80%E7%AE%B1_1.mp4.jpg",
+        "availableQuantity": 1000,
+        "minQuantity": 10,
+        "description": "A reversible drill is a drill that is simply able to be reversed from a clockwise direction to a counter clockwise direction."
+    },
+    {
+        "name": "Fein Multi Purpose Oscillating ",
+        "price": 38,
+        "img": "https://quincailleriea1.com/wp-content/uploads/2020/06/32344_img_9556HN.jpg",
+        "availableQuantity":1200,
+        "minQuantity": 10,
+        "description": "The powerful and universal system for interior work and renovation with accessories for a wide range of applications. "
+    }
+]
