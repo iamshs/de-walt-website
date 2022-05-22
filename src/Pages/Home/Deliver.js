@@ -70,6 +70,7 @@ const [reload,setReload] = useState(false)
       .then(res=>res.json())
       .then(result=>{
           console.log(result)
+          e.target.reset()
       })
  
   }
