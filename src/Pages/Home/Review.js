@@ -1,4 +1,5 @@
 import React from "react";
+import {AiFillStar} from "react-icons/ai"
 
 const Review = (props) => {
   const { review, ratings } = props.review;
@@ -7,7 +8,8 @@ const Review = (props) => {
   <div className="card-body">
    
     <p className="font-semibold ">"{review}"</p>
-    <p className="font-bold ">Ratings: <span>{ratings}</span></p>
+    <p className="font-bold ">Ratings: <span> {ratings}<AiFillStar 
+       className="inline text-lg mb-1 text-amber-500" /> </span></p>
    
    
   </div>
