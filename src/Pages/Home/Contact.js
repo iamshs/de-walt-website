@@ -18,7 +18,7 @@ const Contact = () => {
            <p>Join the community today and talk with other pros</p>
        </div>
        <div className="w-64  p-10">
-           <img className="mb-2" src={contact} alt="" />
+           <img className="mb-2" src={register} alt="" />
            <h3 className="text-xl mb-2"> Product Registration</h3>
            <p>DeWalt product are backed by the best coverage in the industry</p>
        </div>

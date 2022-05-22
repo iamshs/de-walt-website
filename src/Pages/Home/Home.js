@@ -3,6 +3,7 @@ import Banner from './Banner';
 import Contact from './Contact';
 import Reviews from './Reviews';
 import Specialty from './Specialty';
+import Summary from './Summary';
 import Tools from './Tools';
 
 
@@ -11,6 +12,7 @@ const Home = () => {
         <div>
            <Banner />
            <Specialty />
+           <Summary />
            <Tools />
            <Reviews />
            <Contact />
