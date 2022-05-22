@@ -44,6 +44,8 @@ const [reload,setReload] = useState(false)
         .then(quantity=>{
             console.log(quantity)
             setReload(!reload)
+            alert('delivered your order')
+            
         })
      }
     
