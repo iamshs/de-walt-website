@@ -7,24 +7,54 @@ import auth from "../../firebase.init";
 const Deliver = () => {
   const { _id } = useParams();
   const [toolDetail, setToolDetail] = useState([]);
+//   const [quantity,setQuantity]= useState(1)
+const [reload,setReload] = useState(false)
   const [user] = useAuthState(auth);
   useEffect(() => {
     fetch(`http://localhost:5000/tool/${_id}`)
       .then((res) => res.json())
       .then((data) => setToolDetail(data));
-  }, [_id]);
+  }, [toolDetail,_id]);
 
   //placing order 
-
+//   console.log(quantity)
   const handleSubmit = e =>{
       e.preventDefault()  
-
+      const quantity = e.target.quantity.value
+      const min = toolDetail.minQuantity
+      const max= toolDetail.availableQuantity
+     if(quantity < min || quantity > max ){
+         alert('Your Quantity have to be between min and max Quantity')
+         return
+     }
+     else{
+        const updateQuantity = parseInt(toolDetail.availableQuantity) - parseInt(quantity);
+        
+        const totalQuantity = {availableQuantity: updateQuantity };
+        // const value = Math.max(min, Math.min(max, Number(e.target.quantity.value)));
+        // setQuantity(updateQuantity)
+        fetch(`http://localhost:5000/tool/${_id}`,{
+            method:'PUT',
+            headers:{
+                'content-type':'application/json'
+            },
+            body:JSON.stringify(totalQuantity)
+        })
+        .then(res=>res.json())
+        .then(quantity=>{
+            console.log(quantity)
+            setReload(!reload)
+        })
+     }
+    
+   
 
       const orders = {
           userEmail : user.email,
           userName : user.displayName,
           phone: e.target.phone.value,
-          address : e.target.address.value
+          address : e.target.address.value,
+          
       }
      
 
@@ -38,12 +68,6 @@ const Deliver = () => {
       .then(res=>res.json())
       .then(result=>{
           console.log(result)
-          if(result.success===true){
-             toast('Your Order has Set')
-          }
-          else{
-            toast('You already made an order previously')
-          }
       })
  
   }
@@ -95,6 +119,7 @@ const Deliver = () => {
                 placeholder="Your Address"
                 className="input input-bordered my-2 input-success w-full max-w-xs"
               />
+               <input type="number"  className="input input-bordered my-2 input-success w-full max-w-xs" name="quantity" placeholder="Set quantity" />{" "}
               <input
                 type="Submit"
                 value={"Order"}
