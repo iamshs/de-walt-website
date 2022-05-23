@@ -56,6 +56,8 @@ const [reload,setReload] = useState(false)
           userName : user.displayName,
           phone: e.target.phone.value,
           address : e.target.address.value,
+          tool:toolDetail.name,
+          quantity:e.target.quantity.value
           
       }
      
@@ -88,6 +90,8 @@ const [reload,setReload] = useState(false)
             </h2>
             <p className="text-semibold">{toolDetail.description}</p>
             <p> <span className="text-xl font-bold">Available Quantity:</span> {toolDetail.availableQuantity} </p>
+            <p> <span className="text-xl font-bold">Minimum Order Quantity:</span> {toolDetail.minQuantity} </p>
+            <p> <span className="text-xl font-bold">Price:$</span> {toolDetail.price} </p>
           </div>
         </div>
         <div className="card flex-shrink-0 w-full max-w-md shadow-2xl bg-base-100">
@@ -122,7 +126,7 @@ const [reload,setReload] = useState(false)
                 placeholder="Your Address"
                 className="input input-bordered my-2 input-success w-full max-w-xs"
               />
-               <input type="number"  className="input input-bordered my-2 input-success w-full max-w-xs" name="quantity" placeholder="Set quantity" />{" "}
+               <input type="number" defaultValue={toolDetail.minQuantity}  className="input input-bordered my-2 input-success w-full max-w-xs" name="quantity" placeholder="Set quantity" />{" "}
               <input
                 type="Submit"
                 value={"Order"}
