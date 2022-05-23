@@ -4,7 +4,7 @@ import {AiFillStar} from "react-icons/ai"
 const Review = (props) => {
   const { review, ratings } = props.review;
   return (
-    <div className="card w-96 bg-stone-100 text-neutral">
+    <div className="card lg:max-w-xs mx-2 bg-stone-100 text-neutral">
   <div className="card-body">
    
     <p className="font-semibold ">"{review}"</p>

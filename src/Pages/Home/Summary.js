@@ -13,7 +13,7 @@ const Summary = () => {
       <p className="text-2xl text-center text-primary mb-10">
         TRY TO UNDERSTAND USER EXPECTATION
       </p>
-      <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 my-10 lg:pl-20 pl-10 py-10">
+      <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 my-10 lg:pl-20 pl-10 py-10">
         <div className="w-64">
           <AiFillFlag  size={60}  />
           <h2 className="text-3xl text-primary font-bold">70</h2>
