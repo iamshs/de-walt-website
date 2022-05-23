@@ -9,6 +9,7 @@ const Deliver = () => {
   const [toolDetail, setToolDetail] = useState([]);
 //   const [quantity,setQuantity]= useState(1)
 const [reload,setReload] = useState(false)
+const [isDisabled, setIsDisabled] = useState(false);
   const [user] = useAuthState(auth);
   useEffect(() => {
     fetch(`http://localhost:5000/tool/${_id}`)
@@ -16,6 +17,8 @@ const [reload,setReload] = useState(false)
       .then((data) => setToolDetail(data));
   }, [toolDetail,_id]);
 
+ 
+  
   //placing order 
 //   console.log(quantity)
   const handleSubmit = e =>{
@@ -23,30 +26,34 @@ const [reload,setReload] = useState(false)
       const quantity = e.target.quantity.value
       const min = toolDetail.minQuantity
       const max= toolDetail.availableQuantity
+
      if(quantity < min || quantity > max ){
-         alert('Your Quantity have to be between min and max Quantity')
-         return
+         alert('Your Quantity have to be between min and Available Quantity')
+         setReload(!reload)
+         setIsDisabled(true)
      }
      else{
-        const updateQuantity = parseInt(toolDetail.availableQuantity) - parseInt(quantity);
+        // const updateQuantity = parseInt(toolDetail.availableQuantity) - parseInt(quantity);
         
-        const totalQuantity = {availableQuantity: updateQuantity };
+        // const totalQuantity = {availableQuantity: updateQuantity };
         // const value = Math.max(min, Math.min(max, Number(e.target.quantity.value)));
         // setQuantity(updateQuantity)
-        fetch(`http://localhost:5000/tool/${_id}`,{
-            method:'PUT',
-            headers:{
-                'content-type':'application/json'
-            },
-            body:JSON.stringify(totalQuantity)
-        })
-        .then(res=>res.json())
-        .then(quantity=>{
-            console.log(quantity)
-            setReload(!reload)
-            alert('delivered your order')
+        // fetch(`http://localhost:5000/tool/${_id}`,{
+        //     method:'PUT',
+        //     headers:{
+        //         'content-type':'application/json'
+        //     },
+        //     body:JSON.stringify(totalQuantity)
+        // })
+        // .then(res=>res.json())
+        // .then(quantity=>{
+        //     console.log(quantity)
+        //     
+        //     alert('delivered your order')
             
-        })
+        // })
+       
+        alert('delivered your order')
      }
     
    
@@ -126,10 +133,11 @@ const [reload,setReload] = useState(false)
                 placeholder="Your Address"
                 className="input input-bordered my-2 input-success w-full max-w-xs"
               />
-               <input type="number" defaultValue={toolDetail.minQuantity}  className="input input-bordered my-2 input-success w-full max-w-xs" name="quantity" placeholder="Set quantity" />{" "}
+             <input type="number" defaultValue={toolDetail.minQuantity}  className="input input-bordered my-2 input-success w-full max-w-xs" name="quantity"   placeholder="Set quantity" />
               <input
                 type="Submit"
                 value={"Order"}
+                disabled={isDisabled}
                 className="btn btn-secondary my-2 w-80 text-white"
               />
             </form>

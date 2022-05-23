@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useQuery } from 'react-query';
 import auth from '../../firebase.init';
 import Loading from '../Shared/Loading';
 
@@ -35,7 +34,8 @@ const MyOrders = () => {
         
         <th>Tool</th>
         <th>Quantity</th>
-       
+        <th>Cancel Order</th>
+         <th>Payment</th>
       </tr>
     </thead>
     <tbody>
@@ -44,6 +44,8 @@ const MyOrders = () => {
                    <th>{i + 1}</th>
                    <td>{o.tool}</td>
                 <td>{o.quantity}</td>
+                <td><button className="btn text-semibold btn-error btn-xs">Cancel</button></td>
+                <td><button className="btn text-semibold  btn-primary  btn-xs">Pay</button></td>
         
   </tr>)}  
      
