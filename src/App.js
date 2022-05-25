@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import './App.css';
+import Blog from './Pages/Blogs/Blog';
 import AddProduct from './Pages/Dashboard/AddProduct';
 import AddReview from './Pages/Dashboard/AddReview';
 import Dashboard from './Pages/Dashboard/Dashboard';
@@ -16,6 +17,8 @@ import Login from './Pages/Login/Login';
 import RequireAdmin from './Pages/Login/RequireAdmin';
 import RequireAuth from './Pages/Login/RequireAuth';
 import SignUp from './Pages/Login/SignUp';
+import NotFound from './Pages/NotFound/NotFound';
+import Portfolio from './Pages/Portfolio/Portfolio';
 import Footer from './Pages/Shared/Footer';
 import Navbar from './Pages/Shared/Navbar';
 
@@ -47,6 +50,9 @@ function App() {
          <Route path='/dashboard/manageProduct' element={<RequireAdmin><ManageProduct/></RequireAdmin>} ></Route>
          <Route path='/dashboard/manageOrder' element={<RequireAdmin><ManageOrders /></RequireAdmin>} ></Route>
        </Route>
+       <Route path='/portfolio' element={<Portfolio></Portfolio>} />
+       <Route path='/blog' element={<Blog></Blog>} />
+       <Route path='*' element={<NotFound />} />
      </Routes>
      <ToastContainer />
      <Footer />
