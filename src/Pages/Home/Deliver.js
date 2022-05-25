@@ -64,7 +64,8 @@ const [isDisabled, setIsDisabled] = useState(false);
           phone: e.target.phone.value,
           address : e.target.address.value,
           tool:toolDetail.name,
-          quantity:e.target.quantity.value
+          quantity:e.target.quantity.value,
+          price:toolDetail.price
           
       }
      

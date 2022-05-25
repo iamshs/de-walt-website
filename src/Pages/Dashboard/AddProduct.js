@@ -43,7 +43,7 @@ const AddProduct = () => {
     }
   return (
     <div>
-    <h2 className="text-2xl">Add a New Doctor</h2>
+    <h2 className="text-2xl">Add a Product</h2>
     <form onSubmit={handleSubmit(onSubmit)}>
 
         <div className="form-control w-full max-w-xs">
