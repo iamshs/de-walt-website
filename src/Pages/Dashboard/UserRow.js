@@ -1,6 +1,6 @@
 import React from 'react';
 
-const UserRow = ({user,index,refetch}) => {
+const UserRow = ({user,index,refetch,setDeleteUser}) => {
     const {email,role} = user
     const handleMakeAdmin = ()=>{
         fetch(`http://localhost:5000/user/admin/${email}`, {
@@ -22,7 +22,11 @@ const UserRow = ({user,index,refetch}) => {
             <td>{email}</td>
             <td>{role !== 'admin' && <button onClick={handleMakeAdmin} class="btn btn-xs btn-primary">Make Admin</button>}</td>
             {/* <td><button onClick={handleMakeAdmin} class="btn btn-xs btn-primary">Make Admin</button></td> */}
-            <td><button class="btn btn-xs btn-error">Remove User</button></td>
+            <td>
+            {
+                role !=='admin' && <label htmlFor="delete-modal" onClick={()=>setDeleteUser(user)} className="btn text-semibold btn-error btn-xs">Remove User</label>
+            }
+            </td>
         </tr>
     );
 };

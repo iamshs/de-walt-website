@@ -26,12 +26,25 @@ const MyProfile = () => {
               headers:{
                'content-type':'application/json'
               },
-              body:JSON.stringify(profile)
+              body:JSON.stringify({profile})
           })
           .then(res=>res.json())
           .then(data=>{
-              console.log(data)
+              // console.log(data)
               event.target.reset()
+          })
+
+          fetch(`http://localhost:5000/profile/${user.email}`,{
+            method:"PUT",
+            headers:{
+              'content-type':'application/json'
+            },
+            body:JSON.stringify(profile)
+          })
+          .then(res=>res.json())
+          .then(result=>{
+            console.log(result)
+            event.target.reset()
           })
     }
    

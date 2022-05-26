@@ -14,7 +14,7 @@ const ManageOrders = () => {
         <div>
            <h2 className="text-2xl font-serif font-bold p-4">All Products:{orders.length}</h2> 
            <div className="overflow-x-auto">
-  <table className="table w-full">
+  <table className="table w-full table-normal">
    
     <thead>
       <tr>
