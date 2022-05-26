@@ -5,7 +5,7 @@ const DeleteModal = ({ deletingOrder,refetch,setDeletingOrder }) => {
     const {tool,_id} = deletingOrder;
 
     const handleDelete = () => {
-        fetch(`http://localhost:5000/order/${_id}`, {
+        fetch(`https://thawing-island-69083.herokuapp.com/order/${_id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

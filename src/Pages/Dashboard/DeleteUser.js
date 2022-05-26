@@ -3,7 +3,7 @@ import React from 'react';
 const DeleteUser = ({deleteUser,refetch,setDeleteUser}) => {
 const {_id,email} = deleteUser
    const handleDelete = event =>{
-      fetch(`http://localhost:5000/user/${_id}`,{
+      fetch(`https://thawing-island-69083.herokuapp.com/user/${_id}`,{
           method:'DELETE',
       })
       .then(res=>res.json())

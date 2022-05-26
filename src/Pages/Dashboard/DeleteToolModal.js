@@ -4,7 +4,7 @@ const DeleteToolModal = ({deleteTool,refetch,setDeleteTool}) => {
    const {_id,name} = deleteTool
 
   const handleDelete=()=>{
-      fetch(`http://localhost:5000/tool/${_id}`,{
+      fetch(`https://thawing-island-69083.herokuapp.com/tool/${_id}`,{
           method:'DELETE'
       })
       .then(res=>res.json())

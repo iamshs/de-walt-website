@@ -25,7 +25,7 @@ const AddProduct = () => {
                     minQuantity:data.minQuantity,
                     availableQuantity:data.availableQuantity
                 }
-                fetch('http://localhost:5000/tool',{
+                fetch('https://thawing-island-69083.herokuapp.com/tool',{
                     method:'POST',
                     headers:{
                         'content-type':'application/json'

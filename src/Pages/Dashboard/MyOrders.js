@@ -11,11 +11,11 @@ const MyOrders = () => {
     const [user,loading] = useAuthState(auth)
     const [deleteByUser,setDeleteByUser] = useState(null)
     const email = user.email
-    const { data: orders, isLoading,refetch } = useQuery(['services',email], () => fetch(`http://localhost:5000/order?email=${email}`).then(res => res.json()))
+    const { data: orders, isLoading,refetch } = useQuery(['services',email], () => fetch(`https://thawing-island-69083.herokuapp.com/order?email=${email}`).then(res => res.json()))
 
 
     //  useEffect(()=>{
-    //      fetch(`http://localhost:5000/order?email=${email}`)
+    //      fetch(`https://thawing-island-69083.herokuapp.com/order?email=${email}`)
     //      .then(res=>res.json())
     //      .then(data=>{
     //          setOrders(data)

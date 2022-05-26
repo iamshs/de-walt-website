@@ -21,7 +21,7 @@ const MyProfile = () => {
               link:event.target.link.value
           } 
           
-          fetch('http://localhost:5000/profile',{
+          fetch('https://thawing-island-69083.herokuapp.com/profile',{
               method:'POST',
               headers:{
                'content-type':'application/json'
@@ -34,7 +34,7 @@ const MyProfile = () => {
               event.target.reset()
           })
 
-          fetch(`http://localhost:5000/profile/${user.email}`,{
+          fetch(`https://thawing-island-69083.herokuapp.com/profile/${user.email}`,{
             method:"PUT",
             headers:{
               'content-type':'application/json'

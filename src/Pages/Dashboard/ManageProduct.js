@@ -6,7 +6,7 @@ import DeleteToolModal from './DeleteToolModal';
 
 const ManageProduct = () => {
   const [deleteTool,setDeleteTool] = useState(null)
-    const {data:tools,isLoading,refetch} = useQuery('tools' ,()=> fetch('http://localhost:5000/tool').then(res=>res.json()))
+    const {data:tools,isLoading,refetch} = useQuery('tools' ,()=> fetch('https://thawing-island-69083.herokuapp.com/tool').then(res=>res.json()))
    if(isLoading){
        return <Loading></Loading>
    }

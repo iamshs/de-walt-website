@@ -8,7 +8,7 @@ const AddReview = () => {
          review: e.target.review.value,
          ratings:e.target.ratings.value
      }
-     fetch('http://localhost:5000/review',{
+     fetch('https://thawing-island-69083.herokuapp.com/review',{
          method:'POST',
          headers:{
              'content-type':'application/json'

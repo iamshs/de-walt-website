@@ -11,7 +11,7 @@ const MakeAdmin = () => {
     isLoading,
     refetch,
   } = useQuery("users", () =>
-    fetch("http://localhost:5000/user").then((res) => res.json())
+    fetch("https://thawing-island-69083.herokuapp.com/user").then((res) => res.json())
   );
 
   if (isLoading) {

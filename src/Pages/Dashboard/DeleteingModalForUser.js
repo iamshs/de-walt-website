@@ -4,7 +4,7 @@ const DeleteingModalForUser = ({deleteByUser,setDeleteByUser, refetch}) => {
 
    const {tool,_id}  = deleteByUser
   const handleDeleteBYUser = () =>{
-      fetch(`http://localhost:5000/order/${_id}`,{
+      fetch(`https://thawing-island-69083.herokuapp.com/order/${_id}`,{
           method:"DELETE"
       })
       .then(res=>res.json())

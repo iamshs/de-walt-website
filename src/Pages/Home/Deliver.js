@@ -6,12 +6,12 @@ import auth from "../../firebase.init";
 const Deliver = () => {
   const { _id } = useParams();
   const [toolDetail, setToolDetail] = useState([]);
-//   const [quantity,setQuantity]= useState(1)
 const [reload,setReload] = useState(false)
+const [error,setError] = useState('')
 const [isDisabled, setIsDisabled] = useState(false);
   const [user] = useAuthState(auth);
   useEffect(() => {
-    fetch(`http://localhost:5000/tool/${_id}`)
+    fetch(`https://thawing-island-69083.herokuapp.com/tool/${_id}`)
       .then((res) => res.json())
       .then((data) => setToolDetail(data));
   }, [toolDetail,_id]);
@@ -22,49 +22,26 @@ const [isDisabled, setIsDisabled] = useState(false);
   const max= toolDetail.availableQuantity
    if (quantity <  min ) {
      setIsDisabled(true)
+     setError('You order can not be less than Minimum Quantity')
+    
+
    }
    else if(max < quantity){
      setIsDisabled(true)
+     setError('You order can not be more than Available Quantity ')
+    
    }
    else{
      setIsDisabled(false)
+    
+     setError('')
+
    }
  }
   
-  //placing order 
-//   console.log(quantity)
+ 
   const handleSubmit = e =>{
       e.preventDefault()  
-     
-
-    //  if(quantity < min || quantity > max ){
-    //      alert('Your Quantity have to be between min and Available Quantity')
-    //      setReload(!reload)
-    //      setIsDisabled(true)
-    //  }
-    //  else{
-    //     // const updateQuantity = parseInt(toolDetail.availableQuantity) - parseInt(quantity);
-        
-    //     // const totalQuantity = {availableQuantity: updateQuantity };
-    //     // const value = Math.max(min, Math.min(max, Number(e.target.quantity.value)));
-    //     // setQuantity(updateQuantity)
-    //     // fetch(`http://localhost:5000/tool/${_id}`,{
-    //     //     method:'PUT',
-    //     //     headers:{
-    //     //         'content-type':'application/json'
-    //     //     },
-    //     //     body:JSON.stringify(totalQuantity)
-    //     // })
-    //     // .then(res=>res.json())
-    //     // .then(quantity=>{
-    //     //     console.log(quantity)
-    //     //     
-    //     //     alert('delivered your order')
-            
-    //     // })
-       
-    //     alert('delivered your order')
-    //  }
     
    
 
@@ -80,7 +57,7 @@ const [isDisabled, setIsDisabled] = useState(false);
       }
      
 
-      fetch('http://localhost:5000/order',{
+      fetch('https://thawing-island-69083.herokuapp.com/order',{
           method:'POST',
           headers:{
             "content-type":"application/json"
@@ -153,9 +130,15 @@ const [isDisabled, setIsDisabled] = useState(false);
                
               />
             </form>
+            {
+           error &&  <p className="text-error font-2xl font-bold">{error}</p>
+         }
           </div>
+        
         </div>
+      
       </div>
+    
     </div>
   );
 };

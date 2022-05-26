@@ -5,7 +5,7 @@ import DeleteModal from './DeleteModal';
 
 const ManageOrders = () => {
     const [deletingOrder,setDeletingOrder] = useState(null)
-    const { data: orders, isLoading,refetch } = useQuery('orders', () => fetch('http://localhost:5000/allOrder').then(res => res.json()))
+    const { data: orders, isLoading,refetch } = useQuery('orders', () => fetch('https://thawing-island-69083.herokuapp.com/allOrder').then(res => res.json()))
 
     if(isLoading){
         return <Loading></Loading>

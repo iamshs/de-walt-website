@@ -3,7 +3,7 @@ import React from 'react';
 const UserRow = ({user,index,refetch,setDeleteUser}) => {
     const {email,role} = user
     const handleMakeAdmin = ()=>{
-        fetch(`http://localhost:5000/user/admin/${email}`, {
+        fetch(`https://thawing-island-69083.herokuapp.com/user/admin/${email}`, {
             method: 'PUT',
             headers: {
                 'content-type':'application/json'
